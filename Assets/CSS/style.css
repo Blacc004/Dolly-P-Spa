@@ -1,0 +1,223 @@
+/*======= Variable CSS =======*/
+:root{
+    /*======= Colors =======*/
+    --default-color: hsl(200, 45, 60%);
+    --active-color: hsl(273, 88%, 44%);
+    --error-color: hsl(353, 64%, 53%);
+    --border-color: hsl(200, 4%, 64%);
+    --text-color: hsl(200, 4%, 24%);
+    --body-color: hsl(0, 0%, 100%);
+
+    /*======= Font and Typography =======*/
+    /*.5rem = 8px | 1rem = 16px....*/
+    --body-font: "Montserrat", sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    --header-height: 3.5rem;
+    --biggest-font-size: .938rem;
+    --font-regular: 400;
+    --font-bold: 700;
+    --z-toolip: 10;
+    --z-fixed: 100;
+}
+
+/*======= Base =======*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body, input{
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+    color: var(--text-color);
+}
+
+body{
+    background: var(--body-color);
+}
+
+/*======= Imput Field =======*/
+.container{
+    height: 100vh;
+    margin-inline: 1.5rem;
+    display: grid;
+    place-items: center;
+}
+
+.back-icon {
+    top: 40px;
+    left: 40px;
+    color: #000;
+    cursor: pointer;
+    position: absolute;
+    font-size: 20px;
+}
+
+.back-icon i{
+    color: #000;
+}
+
+.form{
+    width: 100%;
+    max-width: 340px;
+}
+
+.form__field{
+    position: relative;
+    bottom: 15px;
+    margin: 20px;
+    align-items: center;
+}
+
+.login-form .form-submit button{
+    width: 80%;
+    height: 50px;
+    color: white;
+    background: #181717;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.4s;
+}
+
+.form-submit button:hover{
+    background-color: #111;
+    color: white;
+}
+
+.login-form{
+    margin-left: 55px;
+    top: 20px;
+}
+
+.sign__up {
+    margin-left: 30px;
+    bottom: -10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign__up a{
+    font-size: var(--smaller-font-size);
+    color: #111;
+    text-decoration: none;
+}
+
+.sign__up a span{
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sign__up-2 {
+    margin-left: 45px;
+    bottom: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign__up-2 a{
+    font-size: var(--smaller-font-size);
+    color: #111;
+    text-decoration: none;
+}
+
+.sign__up-2 a span{
+    font-weight: 700;
+    cursor: pointer;
+}
+
+input{
+    width: 100%;
+    border: 2px solid ;
+    padding: 1.3rem 1.3rem 1.3rem 2.6rem;
+    border-radius: 4rem;
+    outline: none;
+    font-weight: 500;
+    transition:  border-color 0.4s, box-shadow 0.4s;
+    text-align: center;
+    font-weight: 400;
+    font-size: var(--smaller-font-size);
+}
+
+.form__input::placeholder{
+    color: var(--text-color);
+   
+}
+
+.form__label{
+    position: absolute;
+    left: 1.5rem;
+    top: -.65rem;
+    background-color: var(--body-color);
+    padding: 2px;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+}
+
+.icons{
+    height: max-content;
+    font-size: 1.1rem;
+    position: absolute;
+    left: 1.2rem;
+    top: 0;
+    bottom: 0;
+    margin-block: auto;
+}
+.form__field::after{
+    content: '';
+    position: absolute;
+    height: 28px;
+    border: 1px solid var(--text-color);
+    left: 3.75rem;
+    top: 0;
+    bottom: 0;
+    margin-block: auto;
+}
+
+.error{
+    position: absolute;
+    left: 1.2rem;
+    bottom: -1.5rem;
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+    color: var(--error-color);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+
+.error i{
+    font-size: 1rem;
+}
+
+.error span{
+    font-size: var(--smaller-font-size);
+    font-weight: 500;
+}
+
+/*======= Active focus & valid field color =======*/
+input:focus,
+.valid input{
+    border-color: var(--active-color);
+    box-shadow: 0 8px 24px hsla(200, 70%, 56%, .33);
+}
+
+/*======= Invalid field color =======
+.invalid .form__input{
+    border-color: var(--error-color);
+    box-shadow: 0 8px 24px hsla(353, 64%, 53%, .3);
+}
+
+.invalid .error{
+    opacity: 1;
+}*/
+
